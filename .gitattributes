@@ -6,6 +6,13 @@
  #*.md eol=lf # eol depends on core.eol=native
 *.md text
 
+# For .index file specially
+ #*.index text eol=lf #eol will overwrite text, so there is no need of text attribute here
+ #*.index eol=lf # eol depends on core.eol=native
+*.index text
+
+*.css text
+
 .gitattributes text
 
 # Remove text attribute for binary files，-text and binary are the same purpose
