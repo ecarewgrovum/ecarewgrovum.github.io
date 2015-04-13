@@ -1,14 +1,16 @@
-# Set the default behavior, in case people don't have core.autocrlf set.
+# Auto detect text files and perform LF normalization when checkin. This should be the first line for other lines below to override it.
 * text=auto
 
-# Explicitly declare text files you want to always be normalized and converted
-# to native line endings on checkout.
-*.c text
-*.h text
+# For .md file specially
+ #*.md text eol=lf #eol will overwrite text, so there is no need of text attribute here
+ #*.md eol=lf # eol depends on core.eol=native
+*.md text
 
-# Declare files that will always have CRLF line endings on checkout.
-*.sln text eol=crlf
+.gitattributes text
 
-# Denote all files that are truly binary and should not be modified.
+# Remove text attribute for binary files，-text and binary are the same purpose
+*.jpg -text
+*.jpeg binary
+*.svg -text
 *.png binary
-*.jpg binary
+*.pdf -text
